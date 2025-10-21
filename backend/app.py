@@ -23,5 +23,10 @@ app.register_blueprint(issue_bp, url_prefix="/api")
 with app.app_context():
     db.create_all()
 
+# ✅ Test route for frontend connection
+@app.route("/api/hello")
+def hello():
+    return {"message": "Hello from Flask backend!"}
+
 if __name__ == "__main__":
     app.run(debug=True)
